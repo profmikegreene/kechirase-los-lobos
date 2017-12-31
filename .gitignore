@@ -1,5 +1,9 @@
 .ignore/*
 kll*
 db/mysql/*
+!tsugi/www
 tsugi/www/*
+!rating/www
 rating/www/*
+deploy
+deploy/*
