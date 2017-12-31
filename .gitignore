@@ -1,5 +1,5 @@
 .ignore/*
-.DS_Store
+**/.DS_Store
 kll*
 db/mysql/*
 !tsugi/www
