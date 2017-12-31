@@ -48,6 +48,7 @@ services:
     env_file: .env
     environment:
       - PMA_HOST=${MYSQL_HOST}
+      - PMA_PORT=3636
     networks:
       - dnet
   db:
@@ -62,6 +63,7 @@ services:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
     volumes:
       - ./db/mysql:/var/lib/mysql
+      - ./db/config.sh:/docker-entrypoint-initdb.d/config.sh
     networks:
       dnet:
         aliases:
