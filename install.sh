@@ -4,8 +4,7 @@ echo "============Getting tsugiproject/tsugi:master============"
 git clone https://github.com/tsugiproject/tsugi.git tsugi/www
 
 echo "============Copying config.php============"
-mkdir tsugi/www
-cp tsugi/config.php tsugi/www
+cp tsugi/config.php tsugi/www/config.php
 
 echo "============Removing git files from tsugi============"
 rm -rf ./tsugi/www/.git
@@ -15,7 +14,6 @@ echo "============Getting IMSGlobal/LTI-Sample-Tool-Provider-PHP:master=========
 git clone https://github.com/IMSGlobal/LTI-Sample-Tool-Provider-PHP.git rating/www
 
 echo "============Copying rating config============"
-mkdir rating/www
 # cp tsugi/config.php tsugi/www
 
 echo "============Removing git files from rating============"
