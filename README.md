@@ -25,14 +25,17 @@ Local machine must have:
 `git clone https://github.com/profmikegreene/kechirase-los-lobos`  
 `cd kechirase-los-lobos`  
 `sh install.sh`
+Open http://localhost:8888
+Open http://localhost:8889
 
 shouldn't have to do this since it's being done on the container
 `docker run --rm -v $(pwd)/app:/app composer:latest install`
 
 ### todo
-- [ ] create mysql install script
 - [ ] remove need to run extra composer command
-- [ ] delete dbtest.php
+- [ ] delete config.sh from rating and tsugi ??
+- [ ] programmatically finish tsugi db config
+- [ ] programmatically config a rating
 
 ### How I made it
 1. git init

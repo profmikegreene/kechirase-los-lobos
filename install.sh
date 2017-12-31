@@ -14,7 +14,7 @@ echo "============Getting IMSGlobal/LTI-Sample-Tool-Provider-PHP:master=========
 git clone https://github.com/IMSGlobal/LTI-Sample-Tool-Provider-PHP.git rating/www
 
 echo "============Copying rating config============"
-# cp tsugi/config.php tsugi/www
+mv -v rating/www/src/* rating/www/
 
 echo "============Removing git files from rating============"
 rm -rf ./rating/www/.git

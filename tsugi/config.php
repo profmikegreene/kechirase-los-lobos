@@ -37,12 +37,12 @@ unset($apphome);
 // You need to point this at a database with am account and password
 // that can create tables.   To make the initial tables go into Admin
 // to run the upgrade.php script which auto-creates the tables.
-$myh = getenv('MYSQL_HOST');
-$mydb = getenv('MYSQL_DATABSE')
-$CFG->pdo       = 'mysql:host=$myh;dbname=$mydb';
+$kll_host = getenv('MYSQL_HOST');
+$kll_db = getenv('MYSQL_DATBASE');
+$CFG->pdo       = "mysql:host={$kll_host};dbname={$kll_db}";
 // $CFG->pdo       = 'mysql:host=127.0.0.1;port=8889;dbname=tsugi'; // MAMP
 $CFG->dbuser    = getenv('MYSQL_USER');
-$CFG->dbpass    = getenv('MYSQL_USER');
+$CFG->dbpass    = getenv('MYSQL_PASSWORD');
 
 // You can use the CDN copy of the static content - it is the
 // default unless you override it.
