@@ -1,2 +1,4 @@
 FROM mysql:5.7
 
+COPY config.sh /usr/local/bin
+RUN chmod u+x /usr/local/bin/config.sh

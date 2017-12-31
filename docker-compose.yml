@@ -49,6 +49,7 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
+    command: /usr/local/bin/config.sh
     volumes:
       - ./db/mysql:/var/lib/mysql
     networks:
@@ -59,7 +60,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
-      - 9999:80
+      - ${PMA_PORT}:80
     env_file: .env
     environment:
       - PMA_HOST=${MYSQL_HOST}
