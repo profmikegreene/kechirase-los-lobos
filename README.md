@@ -14,6 +14,12 @@ create separate config for tsugi to avoid keys/passwords going to github
 dockerize it all for easy setup/distribution
 
 initialize rating
+### Requirements
+Local machine must have:
+- Docker
+- Docker Compose
+- Git
+
 
 ### Install
 `git clone https://github.com/profmikegreene/kechirase-los-lobos`  

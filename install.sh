@@ -23,3 +23,6 @@ rm -rf ./rating/www/.git
 
 echo "============Building Docker Images============"
 docker-compose build
+
+echo "============Starting Docker Images============"
+docker-compose up
