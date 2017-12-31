@@ -1,0 +1,75 @@
+version: '2'
+services:
+  tsugi:
+    build: ./tsugi
+    ports:
+      - 8889:80
+    volumes:
+      - ./tsugi/www:/var/www/html
+    depends_on:
+       - db
+    networks:
+      dnet:
+        aliases:
+          - tsugi
+        ipv4_address: ${TSUGI_IP}
+    env_file: .env
+    environment:
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    command: /usr/local/bin/config.sh
+  rating:
+    build: ./rating
+    ports:
+      - 8888:80
+    depends_on:
+       - db
+    volumes:
+      - ./rating/www:/var/www/html
+    networks:
+      dnet:
+        aliases:
+          - rating
+        ipv4_address: ${RATING_IP}
+    env_file: .env
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    command: /usr/local/bin/config.sh
+  db:
+    image: mysql
+    ports:
+      - 3636:3306
+    env_file: .env
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    volumes:
+      - ./db/mysql:/var/lib/mysql
+    networks:
+      dnet:
+        aliases:
+          - db
+        ipv4_address: ${DB_IP}
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 9999:80
+    env_file: .env
+    environment:
+      - PMA_HOST=${MYSQL_HOST}
+    networks:
+      - dnet
+networks:
+  dnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.16.239.0/24
+        gateway: 172.16.239.1

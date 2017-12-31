@@ -1,0 +1,5 @@
+.ignore/*
+kll*
+db/mysql/*
+tsugi/www/*
+rating/www/*

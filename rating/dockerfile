@@ -1,0 +1,23 @@
+FROM php:7.2-apache
+RUN docker-php-ext-install \
+    pdo \
+    pdo_mysql
+
+RUN apt-get update && apt-get install -y \
+    wget \
+    unzip \
+    curl \
+    git
+
+RUN curl -sS https://getcomposer.org/installer | php \
+        && mv composer.phar /usr/local/bin/ \
+        && ln -s /usr/local/bin/composer.phar /usr/local/bin/composer
+
+ENV COMPOSER_ALLOW_SUPERUSER 1
+ENV COMPOSER_HOME /tmp
+ENV PATH="~/.composer/vendor/bin:./vendor/bin:${PATH}"
+
+COPY config.sh /usr/local/bin
+RUN chmod u+x /usr/local/bin/config.sh
+
+COPY ./www .
