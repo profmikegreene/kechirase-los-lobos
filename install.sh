@@ -15,7 +15,7 @@ git clone https://github.com/IMSGlobal/LTI-Sample-Tool-Provider-PHP.git rating/w
 
 echo "============Copying rating config============"
 mv -v rating/www/src/* rating/www/
-
+cp rating/config.php rating/www
 echo "============Removing git files from rating============"
 rm -rf ./rating/www/.git
 

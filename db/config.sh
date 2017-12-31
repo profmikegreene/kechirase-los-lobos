@@ -1,4 +1,4 @@
-echo "Initializing db"
+echo "============Initializing db============"
 
 mysql -u${MYSQL_USERNAME} -p${MYSQL_ROOT_PASSWORD} \
       DATABASE ${MYSQL_DATABASE} DEFAULT CHARACTER SET utf8; \

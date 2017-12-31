@@ -24,12 +24,14 @@ Local machine must have:
 ### Install
 `git clone https://github.com/profmikegreene/kechirase-los-lobos`  
 `cd kechirase-los-lobos`  
-`sh install.sh`
-Open http://localhost:8888
-Open http://localhost:8889
+`sh install.sh`  
+Open http://localhost at the two ports you set in .env (7777 and 6666 by default)
 
 shouldn't have to do this since it's being done on the container
 `docker run --rm -v $(pwd)/app:/app composer:latest install`
+
+### dbtest.php
+If something funky is going on, copy the /dbtest.php file into either tsugi/www or rating/www and access it to see if you're having db connection issues
 
 ### todo
 - [ ] remove need to run extra composer command
