@@ -16,7 +16,8 @@ dockerize it all for easy setup/distribution
 initialize rating
 
 ### Install
-`git clone https://github.com/profmikegreene/kechirase-los-lobos`
+`git clone https://github.com/profmikegreene/kechirase-los-lobos`  
+`cd kechirase-los-lobos`  
 `sh install.sh`
 
 shouldn't have to do this since it's being done on the container
@@ -32,3 +33,4 @@ shouldn't have to do this since it's being done on the container
 2. create .ignore folder and .gitignore
 3. create docker-compose.yml
 4. create the three dockerfiles with base images
+5. pass docker-compose variables to tsugi/config.php
