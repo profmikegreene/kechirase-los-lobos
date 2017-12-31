@@ -4,7 +4,7 @@ echo "============Getting tsugiproject/tsugi:master============"
 git clone https://github.com/tsugiproject/tsugi.git tsugi/www
 
 echo "============Copying config.php============"
-cp tsugi/config.php tsugi/www/config.php
+cp tsugi/config.php tsugi/www
 
 echo "============Removing git files from tsugi============"
 rm -rf ./tsugi/www/.git
