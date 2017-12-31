@@ -1,5 +1,3 @@
-echo "============Initializing tsugi============"
-
 echo "============Getting tsugiproject/tsugi:master============"
 git clone https://github.com/tsugiproject/tsugi.git tsugi/www
 
@@ -9,7 +7,6 @@ cp tsugi/config.php tsugi/www
 echo "============Removing git files from tsugi============"
 rm -rf ./tsugi/www/.git
 
-echo "============Initializing rating============"
 echo "============Getting IMSGlobal/LTI-Sample-Tool-Provider-PHP:master============"
 git clone https://github.com/IMSGlobal/LTI-Sample-Tool-Provider-PHP.git rating/www
 
@@ -18,8 +15,6 @@ mv -v rating/www/src/* rating/www/
 cp rating/config.php rating/www
 echo "============Removing git files from rating============"
 rm -rf ./rating/www/.git
-
-
 
 echo "============Building Docker Images============"
 docker-compose build --no-cache

@@ -39,7 +39,7 @@ unset($apphome);
 // that can create tables.   To make the initial tables go into Admin
 // to run the upgrade.php script which auto-creates the tables.
 $kll_host = getenv('MYSQL_HOST');
-$kll_db = getenv('MYSQL_DATBASE');
+$kll_db = getenv('MYSQL_DATABASE');
 $CFG->pdo       = "mysql:host={$kll_host};dbname={$kll_db}";
 // $CFG->pdo       = 'mysql:host=127.0.0.1;port=8889;dbname=tsugi'; // MAMP
 $CFG->dbuser    = getenv('MYSQL_USER');
@@ -61,7 +61,7 @@ $CFG->dbpass    = getenv('MYSQL_PASSWORD');
 // can make a separate database for each instance of TSUGI.
 // This allows you to host multiple instances of TSUGI in a
 // single database if your hosting choices are limited.
-$CFG->dbprefix  = 'tsugi';
+$CFG->dbprefix  = '';
 
 // This is the PW that you need to access the Administration
 // features of this application. Protect it like the database
