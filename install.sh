@@ -22,7 +22,7 @@ rm -rf ./rating/www/.git
 
 
 echo "============Building Docker Images============"
-docker-compose build
+docker-compose build --no-cache
 
 echo "============Starting Docker Images============"
 docker-compose up

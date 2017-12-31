@@ -5,7 +5,7 @@ Combining tsugi and the IMS Global rating app into a single docker-compose deplo
 
 ### what it is
 
-Mini ecosystem
+Sets up a dockerized learning technology ecosystem MVP
 
 pull in rating and tsugi
 
