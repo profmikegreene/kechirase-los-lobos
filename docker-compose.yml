@@ -3,7 +3,7 @@ services:
   tsugi:
     build: ./tsugi
     ports:
-      - 8889:80
+      - ${TSUGI_PORT}:80
     volumes:
       - ./tsugi/www:/var/www/html
     depends_on:
@@ -23,7 +23,7 @@ services:
   rating:
     build: ./rating
     ports:
-      - 8888:80
+      - ${RATING_PORT}:80
     depends_on:
        - db
     volumes:
