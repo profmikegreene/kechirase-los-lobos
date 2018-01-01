@@ -19,7 +19,6 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_HOST=${MYSQL_HOST}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
-    # command: /usr/local/bin/config.sh
   rating:
     build: ./rating
     ports:
@@ -38,7 +37,6 @@ services:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-    # command: /usr/local/bin/config.sh
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
