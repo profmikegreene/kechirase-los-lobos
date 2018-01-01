@@ -5,7 +5,7 @@ echo "============Copying config.php============"
 cp tsugi/config.php tsugi/www
 
 echo "============Removing git files from tsugi============"
-rm -rf ./tsugi/www/.git
+# rm -rf ./tsugi/www/.git
 
 echo "============Getting IMSGlobal/LTI-Sample-Tool-Provider-PHP:master============"
 git clone https://github.com/IMSGlobal/LTI-Sample-Tool-Provider-PHP.git rating/www

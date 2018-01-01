@@ -7,7 +7,7 @@
 // If we just are using Tsugi but not part of another site
 $apphome = false;
 $kll_tsugi_port = getenv('TSUGI_PORT');
-$wwwroot = "http://localhost:{$$kll_tsugi_port}";
+$wwwroot = "http://localhost:{$kll_tsugi_port}";
 // $wwwroot = 'http://localhost:8888/tsugi';
 // $wwwroot = "https://fb610139.ngrok.io/tsugi";
 
