@@ -3,17 +3,6 @@ Sets up a dockerized learning technology ecosystem MVP by combining tsugi and th
 
 ### for development purposes. use in production at your own risk
 
-### what it is
-
-
-
-pull in rating and tsugi
-
-create separate config for tsugi to avoid keys/passwords going to github
-
-dockerize it all for easy setup/distribution
-
-initialize rating
 ### Requirements
 Local machine must have:
 - Docker
@@ -26,6 +15,7 @@ Local machine must have:
 `cd kechirase-los-lobos`  
 `sh install.sh`  
 Open http://localhost:7777/admin/upgrade.php to finish the tsugi database configuration  
+Open http://localhost:7776/admin to finish the rating database configuration  
 
 
 
@@ -33,13 +23,14 @@ Open http://localhost:7777/admin/upgrade.php to finish the tsugi database config
 If something funky is going on, copy the /dbtest.php file into either tsugi/www or rating/www and access it to see if you're having db connection issues
 
 ### todo
-- [ ] remove need to run extra composer command
-- [ ] delete config.sh from rating and tsugi ??
-- [ ] programmatically finish tsugi db config
-- [ ] programmatically config a rating
-- [ ] what to do with google login
+* remove need to run extra composer command
+* delete config.sh from rating and tsugi ??
+* programmatically finish tsugi db config
+* programmatically config a rating
+* what to do with google login
+* do we need ip addressing still?
 
-### How I made it
+### How I made it - for blogging later
 1. git init
 2. create .ignore folder and .gitignore
 3. create docker-compose.yml
