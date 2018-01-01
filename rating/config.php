@@ -24,9 +24,9 @@
 ###
 ###  Database connection settings
 ###
-  $db = getenv('MYSQL_DATABASE');
-  $host = getenv('MYSQL_HOST');
-  define('DB_NAME', "mysql:dbname={$db};host={$host}");
+  $kll_host = getenv('MYSQL_HOST');
+  $kll_db = getenv('MYSQL_DATABASE');
+  define('DB_NAME', "mysql:dbname={$kll_db};host={$kll_host}");
   define('DB_USERNAME', getenv('MYSQL_USER'));
   define('DB_PASSWORD', getenv('MYSQL_PASSWORD'));
   define('DB_TABLENAME_PREFIX', 'rating');
