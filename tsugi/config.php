@@ -118,8 +118,8 @@ $CFG->providekeys = false;  // true
 // Go to https://console.developers.google.com/apis/credentials
 // create a new OAuth 2.0 credential for a web application,
 // get the key and secret, and put them here:
-$CFG->google_client_id = '96041-nljpjj8jlv4.apps.googleusercontent.com';
-$CFG->google_client_secret = '6Q7w_x4ESrl29a';
+$CFG->google_client_id = getenv('GOOGLE_CLIENT_ID');
+$CFG->google_client_secret = getenv('GOOGLE_CLIENT_SECRET');
 
 // Whether or not to unify accounts between global site-wide login
 // and LTI launches

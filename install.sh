@@ -3,6 +3,7 @@ git clone https://github.com/tsugiproject/tsugi.git tsugi/www
 
 echo "============Configuring tsugi============"
 cp tsugi/config.php tsugi/www
+git clone https://github.com/profmikegreene/peer-grade.git tsugi/www/mod/peer-grade
 
 # Had to remove for tsugi/vendor/tsugi/lib/src/Util/GitRepo.php
 # to work when /store is called

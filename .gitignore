@@ -8,3 +8,5 @@ tsugi/www/*
 rating/www/*
 deploy
 deploy/*
+secret.env
+docker-compose-private.yml
