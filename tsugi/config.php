@@ -7,6 +7,7 @@ ini_set('include_path', $fullpath);
 
 
 // Grab the config-dist to clean up this file and only show the stuff we've changed
+$dirroot = realpath(dirname(__FILE__));
 require_once($dirroot."/config-dist.php");
 
 $kll_tsugi_port = getenv('TSUGI_PORT');
