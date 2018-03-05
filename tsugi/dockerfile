@@ -29,3 +29,5 @@ RUN a2enmod -q rewrite dir expires headers
 COPY ./wait-for-mysql.sh /usr/local/bin
 RUN chmod u+x /usr/local/bin/wait-for-mysql.sh
 
+CMD ["/usr/local/bin/wait-for-mysql.sh"]
+

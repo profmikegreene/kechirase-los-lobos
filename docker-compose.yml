@@ -8,9 +8,9 @@ services:
       - ./tsugi/www:/var/www/html
     depends_on:
        - mysql
-    command: [
-      "/usr/local/bin/wait-for-mysql.sh"
-    ]
+    # command: [
+    #   "/usr/local/bin/wait-for-mysql.sh"
+    # ]
     networks:
       dnet:
         aliases:
