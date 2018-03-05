@@ -8,11 +8,12 @@ services:
       - ./tsugi/www:/var/www/html
     depends_on:
        - db
+    command: ["php", "admin/upgrade.php"]
     networks:
       dnet:
         aliases:
           - tsugi
-        ipv4_address: ${TSUGI_IP}
+        ipv4_address: ${KECHIRASE_SUBNET}.${TSUGI_IP}
     env_file: .env
     environment:
       - MYSQL_USER=${MYSQL_USER}
@@ -31,7 +32,7 @@ services:
       dnet:
         aliases:
           - rating
-        ipv4_address: ${RATING_IP}
+        ipv4_address: ${KECHIRASE_SUBNET}.${RATING_IP}
     env_file: .env
     environment:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
@@ -62,12 +63,12 @@ services:
       dnet:
         aliases:
           - db
-        ipv4_address: ${DB_IP}
+        ipv4_address: ${KECHIRASE_SUBNET}.${DB_IP}
 networks:
   dnet:
     driver: bridge
-    # ipam:
-    #   driver: default
-    #   config:
-    #   - subnet: 172.16.237.0/24
-    #     gateway: 172.16.237.1
+    ipam:
+      driver: default
+      config:
+      - subnet: ${KECHIRASE_SUBNET}.0/24
+        gateway: ${KECHIRASE_SUBNET}.1

@@ -2,6 +2,7 @@ echo "============Getting tsugiproject/tsugi:master============"
 git clone https://github.com/tsugiproject/tsugi.git tsugi/www
 
 echo "============Configuring tsugi============"
+echo "copying $(pwd)tsugi/config.php to $(pwd)/tsugi/www"
 cp tsugi/config.php tsugi/www
 
 echo "============Getting tsugitools/ltitool:master============"
