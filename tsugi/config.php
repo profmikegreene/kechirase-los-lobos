@@ -43,3 +43,6 @@ $CFG->maileol = "\n";
 $CFG->sessionsalt = "fpmqZWBcp993Ca8RNWtVJfeM82Xf2fwK8uwD";
 
 $CFG->timezone = 'America/New_York';
+
+// Start a DB upgrade
+require_once($dirroot."admin/upgrade.php");
