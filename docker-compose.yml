@@ -9,7 +9,7 @@ services:
     depends_on:
        - mysql
     command: [
-      "/usr/local/bin/wait-for-it.sh",
+      "/usr/local/bin/wait-for-mysql.sh",
       "-t", "10",
       "${KECHIRASE_SUBNET}.${MYSQL_IP}:${MYSQL_PORT}",
       "--", "docker-php-entrypoint", "php", "config.php"
