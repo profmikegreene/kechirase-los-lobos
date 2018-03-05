@@ -45,4 +45,4 @@ $CFG->sessionsalt = "fpmqZWBcp993Ca8RNWtVJfeM82Xf2fwK8uwD";
 $CFG->timezone = 'America/New_York';
 
 // Start a DB upgrade
-require_once($CFG->dirroot."admin/upgrade.php");
+require_once($CFG->dirroot."/admin/upgrade.php");
