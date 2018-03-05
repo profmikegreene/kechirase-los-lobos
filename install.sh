@@ -26,7 +26,9 @@ echo "============Cleaning up rating============"
 rm -rf ./rating/www/.git
 
 echo "============Building Docker Images============"
-docker-compose build --no-cache
+# if you're having trouble try using --no-cache
+# docker-compose build --no-cache
+docker-compose build
 
 echo "============Starting Docker Images============"
 docker-compose up
