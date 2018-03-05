@@ -13,7 +13,6 @@ echo -e "\nmysql ready"
 echo "Running tsugi config"
 php config.php
 
-echo "apache2-foreground"
 # from https://github.com/docker-library/php/blob/fd8e15250a0c7667b161c34a25f7916b01f72367/7.2/stretch/apache/docker-php-entrypoint
 # first arg is `-f` or `--some-option`
 if [ "${1#-}" != "$1" ]; then

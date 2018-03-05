@@ -7,8 +7,7 @@ ini_set('include_path', $fullpath);
 
 
 // Grab the config-dist to clean up this file and only show the stuff we've changed
-$dirroot = realpath(dirname(__FILE__));
-require_once($dirroot."/config-dist.php");
+require_once("config-dist.php");
 
 $kll_tsugi_port = getenv('TSUGI_PORT');
 $wwwroot = "http://localhost:{$kll_tsugi_port}";
@@ -46,4 +45,4 @@ $CFG->sessionsalt = "fpmqZWBcp993Ca8RNWtVJfeM82Xf2fwK8uwD";
 $CFG->timezone = 'America/New_York';
 
 // Start a DB upgrade
-require_once($dirroot."admin/upgrade.php");
+require_once($CFG->dirroot."admin/upgrade.php");
