@@ -10,9 +10,9 @@ services:
        - mysql
     command: [
       "/usr/local/bin/wait-for-it.sh",
-      "-t", "0",
+      "-t", "10",
       "${KECHIRASE_SUBNET}.${MYSQL_IP}:${MYSQL_PORT}",
-      "--", "apache2-foreground", "php", "config.php"
+      "--", "docker-php-entrypoint", "php", "config.php"
     ]
     networks:
       dnet:

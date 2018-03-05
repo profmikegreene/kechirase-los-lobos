@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
     wget \
     unzip \
     curl \
-    git
+    git \
+    mysql-client
 
 RUN curl -sS https://getcomposer.org/installer | php \
         && mv composer.phar /usr/local/bin/ \
@@ -25,6 +26,6 @@ COPY ./www .
 
 RUN a2enmod -q rewrite dir expires headers
 
-COPY ./wait-for-it.sh /usr/local/bin
-RUN chmod u+x /usr/local/bin/wait-for-it.sh
+COPY ./wait-for-mysql.sh /usr/local/bin
+RUN chmod u+x /usr/local/bin/wait-for-mysql.sh
 
