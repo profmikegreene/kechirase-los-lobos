@@ -66,8 +66,8 @@ services:
 networks:
   dnet:
     driver: bridge
-    ipam:
-      driver: default
-      config:
-      - subnet: 172.16.239.0/24
-        gateway: 172.16.239.1
+    # ipam:
+    #   driver: default
+    #   config:
+    #   - subnet: 172.16.237.0/24
+    #     gateway: 172.16.237.1
