@@ -10,3 +10,8 @@ done
 
 echo -e "\nmysql ready"
 
+echo "Starting Apache"
+docker-php-entrypoint
+
+echo "Running tsugi config"
+php config.php
