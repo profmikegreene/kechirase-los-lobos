@@ -63,7 +63,7 @@ create table {$plugins} (
 echo("Checking for any needed upgrades...<br/>\n");
 
 // Scan the tools folders
-$tools = findFiles("database.php","../");
+$tools = findFiles("database.php",$CFG->dirroot);
 if ( count($tools) < 1 ) {
     echo("No database.php files found...<br/>\n");
     return;

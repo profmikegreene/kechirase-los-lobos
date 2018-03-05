@@ -2,6 +2,7 @@
 **/.DS_Store
 kll*
 mysql/mysql/*
+tsugi/tsugitools
 !tsugi/www
 tsugi/www/*
 !rating/www
