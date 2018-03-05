@@ -9,4 +9,5 @@ rating/www/*
 deploy
 deploy/*
 secret.env
+rebuild.sh
 docker-compose-private.yml
