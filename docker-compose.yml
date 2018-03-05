@@ -7,7 +7,7 @@ services:
     volumes:
       - ./tsugi/www:/var/www/html
     depends_on:
-       - db
+       - mysql
     command: ["/usr/local/bin/wait-for-it.sh", "${MYSQL_HOST}:${MYSQL_PORT}", "--", "php", "admin/upgrade.php"]
     networks:
       dnet:
@@ -25,7 +25,7 @@ services:
     ports:
       - ${RATING_PORT}:80
     depends_on:
-       - db
+       - mysql
     volumes:
       - ./rating/www:/var/www/html
     networks:
@@ -46,24 +46,24 @@ services:
       - PMA_HOST=${MYSQL_HOST}
     networks:
       - dnet
-  db:
-    build: ./db
+  mysql:
+    build: ./mysql
     ports:
-      - 3636:3306
+      - ${MYSQL_PORT}:3306
     env_file: .env
     environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
     volumes:
-      - ./db/mysql:/var/lib/mysql
-      - ./db/config.sh:/docker-entrypoint-initdb.d/config.sh
+      - ./mysql/mysql:/var/lib/mysql
+      - ./mysql/config.sh:/docker-entrypoint-initdb.d/config.sh
     networks:
       dnet:
         aliases:
-          - db
-        ipv4_address: ${KECHIRASE_SUBNET}.${DB_IP}
+          - mysql
+        ipv4_address: ${KECHIRASE_SUBNET}.${MYSQL_IP}
 networks:
   dnet:
     driver: bridge

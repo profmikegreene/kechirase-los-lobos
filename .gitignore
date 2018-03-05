@@ -1,7 +1,7 @@
 .ignore/*
 **/.DS_Store
 kll*
-db/mysql/*
+mysql/mysql/*
 !tsugi/www
 tsugi/www/*
 !rating/www
