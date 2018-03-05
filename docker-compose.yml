@@ -9,7 +9,8 @@ services:
     depends_on:
        - mysql
     command: [
-      "/usr/local/bin/wait-for-mysql.sh"
+      "/usr/local/bin/wait-for-mysql.sh",
+      "docker-php-entrypoint"
     ]
     networks:
       dnet:

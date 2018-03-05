@@ -12,6 +12,3 @@ echo -e "\nmysql ready"
 
 echo "Running tsugi config"
 php config.php
-
-echo "Starting Apache"
-docker-php-entrypoint
