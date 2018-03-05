@@ -8,7 +8,12 @@ services:
       - ./tsugi/www:/var/www/html
     depends_on:
        - mysql
-    command: ["/usr/local/bin/wait-for-it.sh", "${KECHIRASE_SUBNET}.${MYSQL_IP}:${MYSQL_PORT}", "--", "php", "config.php"]
+    command: [
+      "/usr/local/bin/wait-for-it.sh",
+      "-t", "0",
+      "${KECHIRASE_SUBNET}.${MYSQL_IP}:${MYSQL_PORT}",
+      "--", "apache2-foreground", "php", "config.php"
+    ]
     networks:
       dnet:
         aliases:
