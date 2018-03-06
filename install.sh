@@ -1,35 +1,29 @@
-echo "============Getting tsugiproject/tsugi:master============"
+echo "01============Getting tsugiproject/tsugi:master============"
 git clone https://github.com/tsugiproject/tsugi.git tsugi/www
 
-echo "============Configuring tsugi============"
+echo "02============Configuring tsugi============"
 echo "copying tsugi/config.php to /tsugi/www"
 echo "in $(pwd)"
 cp tsugi/config.php tsugi/www
-
-echo "============Getting tsugitools/ltitool:master============"
 git clone https://github.com/tsugitools/ltitool.git tsugi/www/mod/ltitool
+docker run --rm -v $(pwd)/deploy/tsugi/www:/app composer:latest install
 
-# Had to remove for tsugi/vendor/tsugi/lib/src/Util/GitRepo.php
-# to work when /store is called
-# echo "============Cleaning up tsugi============"
-# rm -rf ./tsugi/www/.git
-
-echo "============Getting IMSGlobal/LTI-Sample-Tool-Provider-PHP:master============"
+echo "04============Getting IMSGlobal/LTI-Sample-Tool-Provider-PHP:master============"
 git clone https://github.com/IMSGlobal/LTI-Sample-Tool-Provider-PHP.git rating/www
 
-echo "============Configuring rating============"
+echo "05============Configuring rating============"
 mv -v rating/www/src/* rating/www/
 cp rating/config.php rating/www
 docker run --rm -v $(pwd)/rating/www:/app composer:latest install
 
-echo "============Cleaning up rating============"
+echo "06============Cleaning up rating============"
 rm -rf ./rating/www/.git
 
-echo "============Building Docker Images============"
+echo "07============Building Docker Images============"
 # if you're having trouble try using --no-cache
-# docker-compose build --no-cache
-docker-compose build
+docker-compose build --no-cache
+#docker-compose build
 
-echo "============Starting Docker Images============"
+echo "08============Starting Docker Images============"
 docker-compose up
 

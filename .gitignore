@@ -11,4 +11,5 @@ deploy
 deploy/*
 secret.env
 rebuild.sh
+undeploy.sh
 docker-compose-private.yml
