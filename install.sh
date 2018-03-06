@@ -6,7 +6,7 @@ echo "copying tsugi/config.php to /tsugi/www"
 echo "in $(pwd)"
 cp tsugi/config.php tsugi/www
 git clone https://github.com/tsugitools/ltitool.git tsugi/www/mod/ltitool
-docker run --rm -v $(pwd)/deploy/tsugi/www:/app composer:latest install
+docker run --rm -v $(pwd)/tsugi/www:/app composer:latest install
 
 echo "04============Getting IMSGlobal/LTI-Sample-Tool-Provider-PHP:master============"
 git clone https://github.com/IMSGlobal/LTI-Sample-Tool-Provider-PHP.git rating/www
