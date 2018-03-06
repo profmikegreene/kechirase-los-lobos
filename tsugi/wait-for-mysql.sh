@@ -10,7 +10,7 @@ done
 
 echo -e "\nmysql ready"
 
-echo "Running tsugi config"
+echo "Running tsugi admin/upgrade.php"
 cd /var/www/html/admin
 php upgrade.php
 

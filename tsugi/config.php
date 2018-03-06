@@ -8,17 +8,18 @@ ini_set('include_path', $fullpath);
 
 // Grab the config-dist to clean up this file and only show the stuff we've changed
 require_once("config-dist.php");
-
+$CFG->apphome 	= false;
 $kll_tsugi_port = getenv('TSUGI_PORT');
-$wwwroot = "http://localhost:{$kll_tsugi_port}";
+$CFG->wwwroot 	= "http://localhost:{$kll_tsugi_port}";
 
-$kll_host = getenv('MYSQL_HOST');
-$kll_db = getenv('MYSQL_DATABASE');
+
+$kll_host 			= getenv('MYSQL_HOST');
+$kll_db 				= getenv('MYSQL_DATABASE');
 $CFG->pdo       = "mysql:host={$kll_host};dbname={$kll_db}";
 $CFG->dbuser    = getenv('MYSQL_USER');
 $CFG->dbpass    = getenv('MYSQL_PASSWORD');
 
-$CFG->adminpw = 'admin';
+$CFG->adminpw 	= 'admin';
 
 $CFG->install_folder = $CFG->dirroot.'/mod';
 

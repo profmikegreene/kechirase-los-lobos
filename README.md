@@ -26,7 +26,7 @@ If something funky is going on, copy the /dbtest.php file into either tsugi/www 
 * remove need to run extra composer command
     - should be able to that via `docker run --rm -v $(pwd):/app composer:latest install`
 * delete config.sh from rating and tsugi ??
-* programmatically finish tsugi db config
+- [x] programmatically finish tsugi db config
 * programmatically config a rating
 * what to do with google login
 * do we need ip addressing still?
