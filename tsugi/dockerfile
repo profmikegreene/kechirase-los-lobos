@@ -11,9 +11,6 @@ RUN apt-get update && apt-get install -y \
     git \
     mysql-client
 
-COPY config.sh /usr/local/bin
-RUN chmod u+x /usr/local/bin/config.sh
-
 COPY ./www .
 
 RUN a2enmod -q rewrite dir expires headers
